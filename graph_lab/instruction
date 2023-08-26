@@ -1,0 +1,16 @@
+terraform graph > graph.dot
+yum install graphviz
+cat graph.dot | dot -Tsvg > graph.svg
+
+
+
+---------------
+
+how to do that -
+first do "terraform graph > graph.dot" this will create a graph.dot file bassed on .tf file 
+1 - install package in linux 
+2 - convert the .dot file to .svg file with below command 
+cat graph.dot | dot -Tsvg > graph.svg
+3 . you can open graph.svg file with google chrome and it will show visual representation s
+
+------------------------------------------
