@@ -292,3 +292,19 @@ terraform workspace -h = will show the terraform workspace commands
 terraform workspace show = will show the current workspace 
 terraform workspace new "name of workspace" = will create new workspace 
 
+**************************************************************************************************************************
+
+Terraform default bahaviour -
+------------------------------
+
+suppose you have deployed an ec2 instance with tag value name=firstec2 and now someone came and chnage the name manually from aws console 
+now once you will do terraform apply , it will again chnage the tag value to name=firstec2 .
+suppose you dont want this chnage and wants to ignore the manual chnage , meta argument will help here 
+
+write a lifecycle block insde the resource block to ignoire the change 
+lifecycle {
+     ignore_chnages = [tags]
+
+     now once you will run terraform apply , any chnages related to tags will be ignored 
+
+     
