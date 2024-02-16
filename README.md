@@ -302,16 +302,20 @@ now once you will do terraform apply , it will again chnage the tag value to nam
 suppose you dont want this chnage and wants to ignore the manual chnage , meta argument will help here 
 
 write a lifecycle block insde the resource block to ignoire the change 
-lifecycle {
-     ignore_chnages = [tags]
-     }
+
+  lifecycle {
+           ignore_chnages = [tags]
+            }
+
 now once you will run terraform apply , any chnages related to tags will be ignored 
+
 there are a lot of meta argument is allowed in terraform , lifecycle is one of them 
-depends_on
-count
-for_each
-lifecycle 
-provider 
+
+1 = depends_on
+2 = count
+3 = for_each
+4 = lifecycle 
+5 = provider 
 
 
 
