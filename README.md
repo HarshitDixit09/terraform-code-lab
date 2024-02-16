@@ -294,8 +294,8 @@ terraform workspace new "name of workspace" = will create new workspace
 
 **************************************************************************************************************************
 
-Terraform default bahaviour -
-------------------------------
+Terraform default bahaviour and use of meta argument -
+----------------------------------------------------------
 
 suppose you have deployed an ec2 instance with tag value name=firstec2 and now someone came and chnage the name manually from aws console 
 now once you will do terraform apply , it will again chnage the tag value to name=firstec2 .
@@ -304,7 +304,15 @@ suppose you dont want this chnage and wants to ignore the manual chnage , meta a
 write a lifecycle block insde the resource block to ignoire the change 
 lifecycle {
      ignore_chnages = [tags]
+     }
+now once you will run terraform apply , any chnages related to tags will be ignored 
+there are a lot of meta argument is allowed in terraform , lifecycle is one of them 
+depends_on
+count
+for_each
+lifecycle 
+provider 
 
-     now once you will run terraform apply , any chnages related to tags will be ignored 
+
 
      
